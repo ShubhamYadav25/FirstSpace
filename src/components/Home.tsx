@@ -1,74 +1,78 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { SearchBar } from 'react-native-elements';
+
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  TextInput,
-  TouchableOpacity,
+  View
 } from 'react-native';
+
+import DropDownPicker from 'react-native-dropdown-picker';
 
 function Home(): React.JSX.Element {
 
-    return (
+    const [search, setSearch] = useState('');
 
-        // View with container style
-        <View style={styles.container}>
-        
-            <Text style={styles.title}>Welcome to Home</Text>
-           
-        </View>
+	const [stateValue, setStateValue] = useState(null);
+
+    const updateSearch = (search: string) => {
+        console.log(search);
+        setSearch(search);
+    }
+
+	const [open1, setOpen1] = useState(false);
+	  const [value1, setValue1] = useState(null);
+	  const [items1, setItems1] = useState([
+		{ label: 'Option A', value: 'optionA' },
+		{ label: 'Option B', value: 'optionB' },
+		{ label: 'Option C', value: 'optionC' },
+	  ]);
+
+	  const [open2, setOpen2] = useState(false);
+	  const [value2, setValue2] = useState(null);
+	  const [items2, setItems2] = useState([
+		{ label: 'Option A', value: 'optionA' },
+		{ label: 'Option B', value: 'optionB' },
+		{ label: 'Option C', value: 'optionC' },
+	  ]);
+
+    return (
+    	<SafeAreaView>
+			<View>
+				<SearchBar
+					platform="android"
+					placeholder="Type Here..."
+					onChangeText={updateSearch}
+					value={search}
+				/> 
+			</View>
+			<View  style={{ flexDirection: 'row' }}>
+				<View>
+				<DropDownPicker
+						open={open1}
+						value={value1}
+						items={items1}
+						style={{width: '65%'}}
+						setOpen={setOpen1}
+						placeholder='Select City'
+						setValue={setValue1}
+						setItems={setItems1}
+					/>  
+				</View>
+				<View>
+					<DropDownPicker
+						open={open2}
+						value={value2}
+						items={items2}
+						style={{width: '55%'}}
+						setOpen={setOpen2}
+						placeholder='Select City'
+						setValue={setValue2}
+						setItems={setItems2}
+					/>  
+				</View>
+			</View> 
+		</SafeAreaView>
     );
 }
-
-// Adding styling
-const styles = StyleSheet.create({
-    container : {
-        flex: 1,
-        backgroundColor: '#D7CCFF',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title : {
-        fontWeight: "bold",
-        fontSize:50,
-        color:"#8E4DFF",
-        marginBottom: 40,
-    },
-    inputView:{
-        width:"80%",
-        backgroundColor:"#AEA8FF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20
-    },
-    inputText:{
-        height:50,
-        fontWeight: "bold",
-        color:"black"
-    },
-
-    forgot : {
-        color:"black",
-        fontWeight: "bold",
-        fontSize:14
-    },
-    loginBtn:{
-        width:"80%",
-        backgroundColor:"#8E4DFF",
-        borderRadius:25,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:40,
-        marginBottom:10
-    },
-
-});
 
 export default Home;

@@ -35,7 +35,20 @@ function App(): React.JSX.Element {
       <NavigationContainer>
           <Stack.Navigator initialRouteName="Login" >
             <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Home" 
+                options={{ 
+                    title: 'FirstSpaces',
+                    headerStyle: {
+                      backgroundColor: '#8E4DFF',
+                    },
+                    headerShown: false,
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                    },
+                  }} 
+                component={Home} 
+            />
           </Stack.Navigator>
       </NavigationContainer>
 
