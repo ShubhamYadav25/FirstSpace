@@ -62,4 +62,8 @@ export default StyleSheet.create({
         textAlign: 'left',
         marginTop: 5,
     },
+    cardContainer: {
+        flex: 1,
+        flexDirection: 'column',
+    }
 })
