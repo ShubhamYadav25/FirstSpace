@@ -1,0 +1,46 @@
+container  {
+    flex: 1;
+    background-color : '#D7CCFF';
+    align-items: 'center';
+    justify-content: 'center';
+}
+
+title  {
+    font-weight: "bold";
+    font-size:50;
+    color:"#8E4DFF";
+    margin-bottom: 40;
+}
+
+inputView {
+    width:"80%";
+    background-color:"#AEA8FF";
+    border-radius:25;
+    height:50;
+    margin-bottom : 20;
+    justify-content:"center";
+    padding:20
+}
+
+inputText {
+    height:50;
+    font-weight: "bold";
+    color:"black"
+}
+
+forgot  {
+    color:"black";
+    font-weight: "bold";
+    font-size:14
+}
+
+loginBtn {
+    width:"80%";
+    background-color:"#8E4DFF";
+    border-radius:25;
+    height:50;
+    align-items:"center";
+    justify-content:"center";
+    margin-top:40;
+    margin-bottom:10
+}
