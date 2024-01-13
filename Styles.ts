@@ -65,5 +65,26 @@ export default StyleSheet.create({
     cardContainer: {
         flex: 1,
         flexDirection: 'column',
+    },
+    Avatarcontainer: {
+        backgroundColor: '#FFFFFF',
+        flexDirection: 'row'
+    },
+    AvatarPlaceHolder: {
+        marginLeft: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    CardMenuList: {
+        flexDirection: 'row',
+        // justifyContent: 'space-between',
+        // alignItems: 'center',
+    },
+    CardMenuListText: {
+        marginLeft: 20,
+        marginTop: 3,
+    },
+    CardMenuIcon: {
+        marginLeft: 200,
     }
 })
