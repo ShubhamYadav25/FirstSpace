@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import type {PropsWithChildren} from 'react';
 import styles from '../../Styles';
 import {
@@ -20,8 +20,13 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { AuthContext, useAuth } from '../context/AuthProvider';
+import { getObjectDataSession } from '../../shared/domain/sessionStorage';
 
 function Login( { navigation }): React.JSX.Element {
+
+    // Auth context
+    const { login } = useAuth(); 
 
     // Initial value for email and password
     const [state, setState] = useState({
@@ -30,21 +35,27 @@ function Login( { navigation }): React.JSX.Element {
     })
 
     const onPressLogin = () => {
-        console.log(state);
+        
+        if (state.email !== '' || state.password !== '') {
+
+            // Calling login auth
+            login(state.email, state.password); 
+            
+        }
+        
         navigation.navigate('Home');
     };
     const onPressForgotPassword = () => {
         // Do something about forgot password operation
     };
     const onPressSignUp = () => {
-        // Do something about signup operation
     };
 
     return (
         
         // View with container style
         <View style={styles.container}>
-            
+
             <Text style={styles.title}>FirstSpace</Text>
 
             <View style={styles.inputView}>
