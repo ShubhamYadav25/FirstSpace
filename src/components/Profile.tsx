@@ -32,23 +32,25 @@ function Profile(): React.JSX.Element {
     return ( 
         
         <>
-            <View style={styles.Avatarcontainer}>
-               <View>
-                    <ImageBackground  source={image} resizeMode="cover">
-                        <Avatar.Image 
-                                size={80} 
-                                source={{ 
-                                    uri:  
-                                    `https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg`, 
-                                }} 
-                            /> 
-                    </ImageBackground>
-               </View>
-                <View style={styles.AvatarPlaceHolder}>
-                    <Text style= {{ fontSize: 18, fontWeight:'bold' }}>Shubham Yadav</Text>
-                    <Text style= {{ fontSize: 18, fontWeight:'bold' }}>IMSEC, Ghaziabad</Text>
-                </View>
-            </View>
+            <Card style={styles.Avatarcontainer}>
+               <Card.Content style={styles.CardMenuList}>
+                    <View>
+                        <ImageBackground  source={image} resizeMode="cover">
+                            <Avatar.Image 
+                                    size={80} 
+                                    source={{ 
+                                        uri:  
+                                        `https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg`, 
+                                    }} 
+                                /> 
+                        </ImageBackground>
+                    </View>
+                    <View style={styles.AvatarPlaceHolder}>
+                        <Text style= {{ fontSize: 18, fontWeight:'bold' }}>Shubham Yadav</Text>
+                        <Text style= {{ fontSize: 18, fontWeight:'bold' }}>IMSEC, Ghaziabad</Text>
+                    </View>
+               </Card.Content>
+            </Card>
             <View>
                 <Divider inset={true} color='#8E4DFF' style={{marginTop:10}} insetType="middle" />
             </View>

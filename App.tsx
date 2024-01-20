@@ -7,6 +7,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Login from './src/components/Login';
 import Home from './src/components/Home';
 import Profile from './src/components/Profile';
+import { AuthProvider } from './src/context/AuthProvider';
 
 
 function App(): React.JSX.Element {
@@ -16,6 +17,7 @@ function App(): React.JSX.Element {
     return (
         
       <NavigationContainer>
+		<AuthProvider>
           <Tab.Navigator 
 		  	initialRouteName="Login"  
 			labeled={false}
@@ -62,6 +64,7 @@ function App(): React.JSX.Element {
 				}} 
 			/>
           </Tab.Navigator>
+		  </AuthProvider>
       </NavigationContainer>
 
     );
