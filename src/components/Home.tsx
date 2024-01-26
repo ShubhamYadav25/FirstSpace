@@ -13,15 +13,24 @@ import {
 
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Text, Card, Button, Icon } from '@rneui/themed';
+import { getObjectDataSession } from '../../shared/domain/sessionStorage';
+import { User } from '../../shared/domain/interfaces';
 
 function Home(): React.JSX.Element {
 
     const [search, setSearch] = useState('');
+	const [user, setUser] = useState<User | null>(null);
 
-	const [stateValue, setStateValue] = useState(null);
+	useEffect(() => {
+		// Get user details
+		const userData = async () => {
+			const userInfo = await getObjectDataSession('userData')
+			setUser(userInfo);
+		}
+		userData();
+	}, []);
 
     const updateSearch = (search: string) => {
-        console.log(search);
         setSearch(search);
     }
 
@@ -95,6 +104,7 @@ function Home(): React.JSX.Element {
 
     return (
     	<SafeAreaView>
+			<Text>Hi {user?.password.toString()} </Text>
 			<View>
 				<SearchBar
 					platform="android"
