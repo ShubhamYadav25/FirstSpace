@@ -19,7 +19,7 @@ export default StyleSheet.create({
         width:"80%",
         backgroundColor:"#AEA8FF",
         borderRadius:25,
-        height:50,
+        height:60,
         marginBottom:20,
         justifyContent:"center",
         padding:20
@@ -43,7 +43,7 @@ export default StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         marginTop:40,
-        marginBottom:10
+        marginBottom:10,
     },
     header: {
         backgroundColor: '#8E4DFF',
@@ -86,5 +86,31 @@ export default StyleSheet.create({
     },
     CardMenuIcon: {
         marginLeft: 200,
-    }
+    },
+    ErrorText: {
+        color: 'red',
+    },
+    titleSignUp : {
+        fontWeight: "bold",
+        fontSize:30,
+        color:"#8E4DFF",
+        marginBottom: 40,
+    },
+    titleSignUpDescription : {
+        fontSize:20,
+        color:"#8E4DFF",
+        marginTop: -48,
+    },
+    SigninBtn:{
+        width:"80%",
+        backgroundColor:"#8E4DFF",
+        borderRadius:25,
+        height:45,
+        alignItems:"center",
+        justifyContent:"center",
+        // marginTop:5,
+        // marginBottom:,
+        paddingTop:30,
+    },
+    
 })

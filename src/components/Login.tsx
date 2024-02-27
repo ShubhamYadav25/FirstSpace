@@ -49,6 +49,7 @@ function Login( { navigation }): React.JSX.Element {
         // Do something about forgot password operation
     };
     const onPressSignUp = () => {
+        navigation.navigate('Signin');
     };
 
     return (
