@@ -8,6 +8,7 @@ import Login from './src/components/Login';
 import Home from './src/components/Home';
 import Profile from './src/components/Profile';
 import { AuthProvider } from './src/context/AuthProvider';
+import Signin from './src/components/Signin';
 
 
 function App(): React.JSX.Element {
@@ -47,6 +48,16 @@ function App(): React.JSX.Element {
 				component={Home}
 				options={{
 					tabBarLabel: 'Home',
+					tabBarIcon: ({ color }) => (
+						<MaterialCommunityIcons name="home-search" color={color} size={25}  />
+					),
+				}} 
+			/>
+			<Tab.Screen 
+				name="Signin" 
+				component={Signin}
+				options={{
+					tabBarLabel: 'Signin',
 					tabBarIcon: ({ color }) => (
 						<MaterialCommunityIcons name="home-search" color={color} size={25}  />
 					),
